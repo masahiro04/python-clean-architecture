@@ -34,6 +34,7 @@ class ResponseSuccess:
     def __bool__(self):
         return True
 
+
 def build_response_from_invalid_request(invalid_request):
     message = "\n".join(
         [

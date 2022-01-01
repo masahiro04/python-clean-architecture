@@ -1,4 +1,3 @@
-import re
 from responses import (
     ResponseSuccess,
     ResponseFailure,
