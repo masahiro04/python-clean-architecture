@@ -1,5 +1,6 @@
 from repository.memrepo import MemRepo
 from use_cases.room_list import room_list_use_case
+from requests.room_list import build_room_list_request
 
 
 rooms = [
@@ -33,7 +34,8 @@ rooms = [
     }]
 
 
+request = build_room_list_request()
 repo = MemRepo(rooms)
-result = room_list_use_case(repo)
+response = room_list_use_case(repo, request)
 
-print(result)
+print([room.to_dict() for room in response.value])
