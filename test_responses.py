@@ -52,6 +52,9 @@ def test_response_failure_initialisation_with_exception():
 
     assert bool(response) is False
     assert response.type == GENERIC_RESPONSE_TYPE
+    print("-----------")
+    print(response.message)
+    print("-----------")
     assert response.message == "Exception: Just an error message"
 
 def test_response_failure_from_empty_invalid_request():
