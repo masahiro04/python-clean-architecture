@@ -72,6 +72,7 @@ def test_room_list_handles_generic_error():
         "message": "Exception: Just an error message"
     }
 
+
 def test_room_list_handles_bad_request():
     repo = mock.Mock()
 

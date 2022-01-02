@@ -20,6 +20,7 @@ room_dict = {
 rooms = [Room.from_dict(room_dict)]
 
 
+# clientはpytest-flaskが提供しているので自動的に利用可能
 @mock.patch("application.rest.room.room_list_use_case")
 def test_get(mock_use_case, client):
     print('-----------------------')
@@ -64,6 +65,7 @@ def test_get_with_filters(mock_use_case, client):
         (ResponseTypes.SYSTEM_ERROR, 500),
     ]
 )
+
 
 @mock.patch("application.rest.room.room_list_use_case")
 def test_get_response_failures(
