@@ -6,3 +6,4 @@ watchdog
 flake8
 Sphinx
 Flask
+psycopg2
