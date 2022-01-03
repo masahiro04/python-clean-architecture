@@ -144,5 +144,18 @@ def compose(subcommand):
         p.wait()
 
 
+@cli.command()
+def init_postgres():
+    configure_app(os.getenv("APPLICATION_CONFIG"))
+
+    try:
+        run_sql([f"CREATE DATABASE {os.getenv('APPLICATION_DB')}"])
+    except psycopg2.Error:
+        print(
+            f"The database {os.getenv(('APPLICATION_DB'))} already",
+            "exists and will not be recreated",
+        )
+
+
 if __name__ == "__main__":
     cli()
